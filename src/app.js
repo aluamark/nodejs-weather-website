@@ -31,7 +31,6 @@ app.get('', (req, res) => {
 app.get('/about', (req, res) => {
     res.render('about', {
         title: 'About Page',
-        age: 27,
         name: 'Mark Alua'
     })
 })
@@ -40,7 +39,6 @@ app.get('/help', (req, res) => {
     res.render('help', {
         title: 'Help page',
         contact: '656-1212',
-        name: 'Mark Alua'
     })
 })
 
