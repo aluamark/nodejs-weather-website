@@ -9,7 +9,10 @@ const forecast = (latitude, longitude, callback) => {
         } else if (body.error) {
             callback(body.error.info)
         } else {
-            callback(undefined, `In ${body.location.name}, ${body.location.country}, the temperature is ${body.current.temperature} degrees. There is a ${body.current.precip}% chance of rain.`)
+            callback(undefined, {
+                time: body.location.localtime,
+                forecast: `In ${body.location.name}, ${body.location.country}, the temperature is ${body.current.temperature} degrees. There is a ${body.current.precip}% chance of rain.`
+            })
         }
     })
 }
